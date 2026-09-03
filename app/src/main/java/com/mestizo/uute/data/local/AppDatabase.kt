@@ -31,7 +31,6 @@ interface FlowmeterDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(flowmeters: List<FlowmeterEntity>)
 }
-
 @Database(entities = [FlowmeterEntity::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun flowmeterDao(): FlowmeterDao
