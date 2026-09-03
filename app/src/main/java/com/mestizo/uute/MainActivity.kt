@@ -1,18 +1,18 @@
 package com.mestizo.uute
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import android.widget.TextView
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.material3.MaterialTheme
+import com.mestizo.uute.ui.screen.MainScreen
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
-        val textView = TextView(this)
-        textView.text = "УУТЭ Калькулятор v1.0\nПриложение успешно скомпилировано!"
-        textView.textSize = 20f
-        textView.setPadding(40, 40, 40, 40)
-        
-        setContentView(textView)
+        setContent {
+            MaterialTheme {
+                MainScreen()
+            }
+        }
     }
 }
